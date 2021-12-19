@@ -29,22 +29,22 @@ export default function Home() {
       </Head>
 
       <main className="text-center min-h-screen mb-10 px-5 xl:px-40">
-        <div className="flex px-2 lg:px-10 mt-10 items-center">
-          <h1 className="text-xl lg:text-4xl font-title tracking-widest">
+        <div className="flex flex-col sm:flex-row px-2 lg:px-10 mt-10 items-center">
+          <h1 className="text-3xl lg:text-4xl font-title tracking-widest">
             Venter
           </h1>
           <input
-            className="rounded-lg h-8 sm:h-12 bg-gray-100 w-full mx-2 sm:mx-5 lg:mx-20 pl-1 lg:pl-5 placeholder:text-sm placeholder:font-bold font-bold"
+            className="rounded-lg h-8 sm:h-12 my-5 sm:my-0 bg-gray-100 w-full mx-2 sm:mx-5 lg:mx-20 pl-2 lg:pl-5 placeholder:text-sm placeholder:font-bold font-bold"
             type="text"
             onChange={(e) => setTitle(e.target.value)}
             value={title}
-            placeholder="Type a title or go to /(your title here) to create a new post"
+            placeholder="Type a title 📓"
             onKeyPress={(e) => {
               if (e.key === "Enter") goToPage();
             }}
           />
           <button
-            className="rounded-lg bg-gradient-to-r h-8 sm:h-12 from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 px-5 lg:px-12 text-white font-bold"
+            className="rounded-lg bg-gradient-to-r h-8 sm:h-12 mt-2 sm:mt-0 from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 px-5 lg:px-12 text-white font-bold"
             onClick={goToPage}
           >
             Go
