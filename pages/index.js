@@ -28,13 +28,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="text-center h-screen px-5 xl:px-40">
-        <div className="flex px-5 lg:px-10 mt-10 items-center">
+      <main className="text-center min-h-screen mb-10 px-5 xl:px-40">
+        <div className="flex px-2 lg:px-10 mt-10 items-center">
           <h1 className="text-xl lg:text-4xl font-title tracking-widest">
             Venter
           </h1>
           <input
-            className=" rounded-lg h-12 bg-gray-100 w-full border-1 border-gray-50 mx-5 lg:mx-20 pl-5 placeholder:font-bold font-bold"
+            className="rounded-lg h-8 sm:h-12 bg-gray-100 w-full mx-2 sm:mx-5 lg:mx-20 pl-1 lg:pl-5 placeholder:text-sm placeholder:font-bold font-bold"
             type="text"
             onChange={(e) => setTitle(e.target.value)}
             value={title}
@@ -44,7 +44,7 @@ export default function Home() {
             }}
           />
           <button
-            className="rounded-lg bg-gradient-to-r h-12 from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 px-5 lg:px-12 text-white font-bold"
+            className="rounded-lg bg-gradient-to-r h-8 sm:h-12 from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 px-5 lg:px-12 text-white font-bold"
             onClick={goToPage}
           >
             Go
@@ -63,7 +63,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="absolute bottom-5 text-center w-full">
+      <footer className="relative mb-8 md:mb-0 md:absolute md:bottom-5 text-center w-full">
         <p className="text-gray-600 font-body">
           Made by{" "}
           <a href="http://github.com/programVeins">

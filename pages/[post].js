@@ -168,7 +168,7 @@ export default function Post() {
                 required
                 value={newPostBody}
                 onChange={(e) => setNewPostBody(e.target.value)}
-                className=" resize-none bg-gray-100 w-full mt-10 rounded-md p-5 focus:outline-none"
+                className="h-96 resize-none bg-gray-100 w-full mt-10 rounded-md p-5 focus:outline-none"
               ></textarea>
               <div className="flex justify-end mt-5">
                 <button
@@ -217,6 +217,14 @@ export default function Post() {
           </div>
         ) : null}
       </main>
+      <footer className="relative my-8 md:my-0 md:absolute md:bottom-5 text-center w-full">
+        <p className="text-gray-600 font-body">
+          Made by{" "}
+          <a href="http://github.com/programVeins">
+            <span className="text-cyan-500 cursor-pointer">Sabesh</span>
+          </a>{" "}
+        </p>
+      </footer>
     </div>
   );
 }
