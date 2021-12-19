@@ -189,7 +189,7 @@ export default function Post() {
         </div>
 
         {showingAlert ? (
-          <div className="fixed bottom-0 right-0 mb-10 mr-10">
+          <div className="fixed bottom-0 sm:right-0 w-full sm:w-auto text-center p-2 mb-10 mr-10">
             <div className="bg-gray-200 text-black text-center p-4 rounded-lg">
               <p className="text-lg font-body mb-5">
                 This will delete the post! Are you sure?
@@ -199,7 +199,7 @@ export default function Post() {
                   onClick={() => {
                     setShowingAlert(false);
                   }}
-                  className="rounded-lg bg-gradient-to-r from-gray-400 to-gray-500 hover:from-gray-500 hover:to-gray-600 px-2 py-1 sm:px-5 md:px-12 text-white font-bold text-xs sm:text-lg w-full sm:w-auto sm:my-auto my-1"
+                  className="rounded-lg bg-gradient-to-r from-gray-400 to-gray-500 hover:from-gray-500 hover:to-gray-600 px-3 py-2 text-white font-bold text-xs sm:text-lg w-2/5 sm:my-auto my-1"
                 >
                   No
                 </button>
@@ -208,7 +208,7 @@ export default function Post() {
                     deletePost();
                     setShowingAlert(false);
                   }}
-                  className="rounded-lg bg-gradient-to-r from-red-400 to-red-500 hover:from-red-500 hover:to-red-600 px-2 py-1 sm:px-5 md:px-12 text-white font-bold text-xs sm:text-lg w-full sm:w-auto sm:my-auto my-1"
+                  className="rounded-lg bg-gradient-to-r from-red-400 to-red-500 hover:from-red-500 hover:to-red-600 px-3 py-2 text-white font-bold text-xs sm:text-lg w-2/5 sm:my-auto my-1"
                 >
                   Yes
                 </button>
