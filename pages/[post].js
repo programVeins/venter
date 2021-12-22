@@ -20,7 +20,7 @@ export default function Post() {
     let { data: posts, error } = await supabase
       .from("posts")
       .select("*")
-      .eq("title", title);
+      .eq("title", title.toLowerCase());
     if (posts.length > 0) {
       setThisPost(posts[0]);
       setPostAlreadyExisting(true);
@@ -31,7 +31,7 @@ export default function Post() {
 
   const createPost = async () => {
     let { data: newPost, error } = await supabase.from("posts").insert({
-      title: title,
+      title: title.toLowerCase(),
       postbody: newPostBody,
       created_at: new Date(),
     });
@@ -45,7 +45,7 @@ export default function Post() {
         postbody: newPostBody,
         created_at: new Date(),
       })
-      .eq("title", title);
+      .eq("title", title.toLowerCase());
     setEditingExistingPost(false);
     setThisPost(updatedPost[0]);
   };
@@ -54,7 +54,7 @@ export default function Post() {
     let { data: deletedPost, error } = await supabase
       .from("posts")
       .delete()
-      .eq("title", title);
+      .eq("title", title.toLowerCase());
     setPostAlreadyExisting(false);
   };
 
@@ -99,24 +99,27 @@ export default function Post() {
                 <h1 className="text-4xl font-title">
                   {thisPost.title?.toUpperCase()}
                 </h1>
-                <div className="flex flex-col sm:flex-row">
-                  <button
-                    className="rounded-lg mr-5 bg-gradient-to-r from-orange-300 to-orange-400 hover:from-orange-400 hover:to-orange-500 px-2 py-1 sm:px-5 md:px-12 text-white font-bold text-xs sm:text-lg w-full sm:w-auto sm:my-auto my-1"
-                    onClick={() => {
-                      editExistingPost();
-                    }}
-                  >
-                    Edit Post
-                  </button>
-                  <button
-                    className="rounded-lg bg-gradient-to-r from-red-400 to-red-500 hover:from-red-500 hover:to-red-600 px-2 py-1 sm:px-5 md:px-12 text-white font-bold text-xs sm:text-lg w-full sm:w-auto sm:my-auto my-1"
-                    onClick={() => {
-                      setShowingAlert(true);
-                    }}
-                  >
-                    Delete Post
-                  </button>
-                </div>
+                {thisPost.title === "why" ||
+                thisPost.title === "how it works" ? null : (
+                  <div className="flex flex-col sm:flex-row">
+                    <button
+                      className="rounded-lg mr-5 bg-gradient-to-r from-orange-300 to-orange-400 hover:from-orange-400 hover:to-orange-500 px-2 py-1 sm:px-5 md:px-12 text-white font-bold text-xs sm:text-lg w-full sm:w-auto sm:my-auto my-1"
+                      onClick={() => {
+                        editExistingPost();
+                      }}
+                    >
+                      Edit Post
+                    </button>
+                    <button
+                      className="rounded-lg bg-gradient-to-r from-red-400 to-red-500 hover:from-red-500 hover:to-red-600 px-2 py-1 sm:px-5 md:px-12 text-white font-bold text-xs sm:text-lg w-full sm:w-auto sm:my-auto my-1"
+                      onClick={() => {
+                        setShowingAlert(true);
+                      }}
+                    >
+                      Delete Post
+                    </button>
+                  </div>
+                )}
               </div>
               <p className="text-gray-600 font-body">
                 {thisPost.created_at?.split("T")[0]}
