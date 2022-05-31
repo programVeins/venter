@@ -28,7 +28,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="text-center min-h-screen mb-10 px-5 xl:px-40">
+      <main className="text-center mb-10 px-5 xl:px-40">
         <div className="flex flex-col sm:flex-row px-2 lg:px-10 mt-10 items-center">
           <h1 className="text-3xl lg:text-4xl font-title tracking-widest">
             Venter
@@ -63,7 +63,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="relative mb-8 md:mb-0 md:absolute md:bottom-5 text-center w-full">
+      <footer className="mb-8 mt-20 text-center w-full">
         <p className="text-gray-600 font-body">
           Made by{" "}
           <a href="http://github.com/programVeins">
