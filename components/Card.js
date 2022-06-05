@@ -6,7 +6,7 @@ export default function Card({ title, body, createdAt }) {
 
   return (
     <div
-      className="cursor-pointer flex flex-col justify-between rounded-md shadow-lg shadow-blue-400 bg-gradient-to-br from-cyan-500 to-blue-500 text-left p-5"
+      className="hover:scale-110 duration-200 ease-out cursor-pointer flex flex-col justify-between rounded-md shadow-lg hover:shadow-xl shadow-blue-400 hover:shadow-blue-300 bg-gradient-to-br from-cyan-500 to-blue-500 text-left p-5"
       onClick={() => router.push(`/${title}`)}
     >
       <div>

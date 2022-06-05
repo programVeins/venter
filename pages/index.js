@@ -30,11 +30,11 @@ export default function Home() {
 
       <main className="text-center mb-10 px-5 xl:px-40">
         <div className="flex flex-col sm:flex-row px-2 lg:px-10 mt-10 items-center">
-          <h1 className="text-3xl lg:text-4xl font-title tracking-widest">
+          <h1 className="cursor-pointer w-1/6 text-3xl lg:text-4xl font-title hover:tracking-widest duration-200 ease-in-out transition-all">
             Venter
           </h1>
           <input
-            className="rounded-lg h-8 sm:h-12 my-5 sm:my-0 bg-gray-100 w-full mx-2 sm:mx-5 lg:mx-20 pl-2 lg:pl-5 placeholder:text-sm placeholder:font-bold font-bold"
+            className="rounded-lg h-8 sm:h-12 my-5 sm:my-0 bg-gray-100 w-full mx-2 sm:mx-5 lg:mx-20 pl-2 lg:pl-5 placeholder:text-sm placeholder:font-bold font-bold focus:outline-none ring-4 ring-blue-300"
             type="text"
             onChange={(e) => setTitle(e.target.value)}
             value={title}
